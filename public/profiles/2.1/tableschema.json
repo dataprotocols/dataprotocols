@@ -2018,6 +2018,146 @@
           },
           {
             "type": "object",
+            "title": "List Field",
+            "description": "The field contains data that is an ordered one-level depth collection of primitive values with a fixed item type.",
+            "required": [
+              "name",
+              "type"
+            ],
+            "properties": {
+              "name": {
+                "title": "Name",
+                "description": "A name for this field.",
+                "type": "string"
+              },
+              "title": {
+                "title": "Title",
+                "description": "A human-readable title.",
+                "type": "string",
+                "examples": [
+                  "{\n  \"title\": \"My Package Title\"\n}\n"
+                ]
+              },
+              "description": {
+                "title": "Description",
+                "description": "A text description. Markdown is encouraged.",
+                "type": "string",
+                "examples": [
+                  "{\n  \"description\": \"# My Package description\\nAll about my package.\"\n}\n"
+                ]
+              },
+              "example": {
+                "title": "Example",
+                "description": "An example value for the field.",
+                "type": "string",
+                "examples": [
+                  "{\n  \"example\": \"Put here an example value for your field\"\n}\n"
+                ]
+              },
+              "missingValues": {
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "value"
+                      ],
+                      "properties": {
+                        "value": {
+                          "type": "string"
+                        },
+                        "label": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "default": [
+                  ""
+                ],
+                "description": "Values that when encountered in the source, should be considered as `null`, 'not present', or 'blank' values.",
+                "context": "Many datasets arrive with missing data values, either because a value was not collected or it never existed.\nMissing values may be indicated simply by the value being empty in other cases a special value may have been used e.g. `-`, `NaN`, `0`, `-9999` etc.\nThe `missingValues` property provides a way to indicate that these values should be interpreted as equivalent to null.\n\n`missingValues` are strings rather than being the data type of the particular field. This allows for comparison prior to casting and for fields to have missing value which are not of their type, for example a `number` field to have missing values indicated by `-`.\n\nThe default value of `missingValue` for a non-string type field is the empty string `''`. For string type fields there is no default for `missingValue` (for string fields the empty string `''` is a valid value and need not indicate null).",
+                "examples": [
+                  "{\n  \"missingValues\": [\n    \"-\",\n    \"NaN\",\n    \"\"\n  ]\n}\n",
+                  "{\n  \"missingValues\": []\n}\n"
+                ]
+              },
+              "type": {
+                "description": "The type keyword, which `MUST` be a value of `list`.",
+                "enum": [
+                  "list"
+                ]
+              },
+              "format": {
+                "description": "There are no format keyword options for `list`: only `default` is allowed.",
+                "enum": [
+                  "default"
+                ],
+                "default": "default"
+              },
+              "delimiter": {
+                "title": "Delimiter",
+                "description": "A character sequence to use as the field separator.",
+                "type": "string",
+                "default": ",",
+                "examples": [
+                  "{\n  \"delimiter\": \",\"\n}\n",
+                  "{\n  \"delimiter\": \";\"\n}\n"
+                ]
+              },
+              "itemType": {
+                "title": "Item type.",
+                "description": "Specifies the list item type.",
+                "type": "string",
+                "enum": [
+                  "string",
+                  "number",
+                  "integer",
+                  "boolean",
+                  "datetime",
+                  "date",
+                  "time"
+                ]
+              },
+              "constraints": {
+                "title": "Constraints",
+                "description": "The following constraints apply for `list` fields.",
+                "type": "object",
+                "properties": {
+                  "required": {
+                    "type": "boolean",
+                    "description": "Indicates whether a property must have a value for each instance.",
+                    "context": "An empty string is considered to be a missing value."
+                  },
+                  "minLength": {
+                    "type": "integer",
+                    "description": "An integer that specifies the minimum length of a value."
+                  },
+                  "maxLength": {
+                    "type": "integer",
+                    "description": "An integer that specifies the maximum length of a value."
+                  }
+                }
+              },
+              "rdfType": {
+                "type": "string",
+                "description": "The RDF type for this field."
+              }
+            },
+            "examples": [
+              "{\n  \"name\": \"options\"\n  \"type\": \"list\"\n}\n"
+            ]
+          },
+          {
+            "type": "object",
             "title": "Duration Field",
             "description": "The field contains a duration of time.",
             "context": "The lexical representation for duration is the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) extended format `PnYnMnDTnHnMnS`, where `nY` represents the number of years, `nM` the number of months, `nD` the number of days, 'T' is the date/time separator, `nH` the number of hours, `nM` the number of minutes and `nS` the number of seconds. The number of seconds can include decimal digits to arbitrary precision. Date and time elements including their designator may be omitted if their value is zero, and lower order elements may also be omitted for reduced precision. Here we follow the definition of [XML Schema duration datatype](http://www.w3.org/TR/xmlschema-2/#duration) directly and that definition is implicitly inlined here.",

@@ -120,6 +120,7 @@ tableSchemaField:
     - "$ref": "#/definitions/tableSchemaFieldGeoPoint"
     - "$ref": "#/definitions/tableSchemaFieldGeoJSON"
     - "$ref": "#/definitions/tableSchemaFieldArray"
+    - "$ref": "#/definitions/tableSchemaFieldList"
     - "$ref": "#/definitions/tableSchemaFieldDuration"
     - "$ref": "#/definitions/tableSchemaFieldAny"
 tableSchemaFieldsMatch:
