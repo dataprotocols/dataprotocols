@@ -3,7 +3,7 @@ title: Table Dialect
 description: Table Dialect describes how tabular data is stored in a file. It supports delimited text files like CSV, semi-structured formats like JSON and YAML, and spreadsheets like Microsoft Excel. The specification is designed to be expressible as a single JSON-compatible descriptor.
 sidebar:
   order: 3
-profile: /profiles/2.0/tabledialect.json
+profile: /profiles/2.1/tabledialect.json
 authors:
   - Rufus Pollock
   - Paul Walsh
@@ -148,7 +148,7 @@ Database formats is a group of formats accessing data from databases like SQLite
 
 A root level Table Dialect descriptor `MAY` have a `$schema` property that `MUST` be a profile as per [Profile](/standard/glossary/#profile) definition that `MUST` include all the metadata constraints required by this specification.
 
-The default value is `https://datapackage.org/profiles/1.0/tabledialect.json` and the recommended value is `https://datapackage.org/profiles/2.0/tabledialect.json`.
+The default value is `https://datapackage.org/profiles/1.0/tabledialect.json` and the recommended value is `https://datapackage.org/profiles/2.1/tabledialect.json`.
 
 ### `header`
 

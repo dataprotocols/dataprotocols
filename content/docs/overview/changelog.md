@@ -6,6 +6,12 @@ sidebar:
 
 This document includes all meaningful changes made to the **Data Package standard**. It does not cover changes made to other documents like Recipes or Guides.
 
+## v2.1
+
+##### `schema.fieldsMatch` (fixed)
+
+[fieldsMatch](/standard/table-schema/#fieldsMatch) has been corrected from array to string to match its definition ([#965](https://github.com/frictionlessdata/datapackage/issues/965)).
+
 ## v2.0
 
 This release includes a rich set of specification improvements to make Data Package a finished product (see [announcement](https://frictionlessdata.io/blog/2023/11/15/frictionless-specs-update/)). All changes were reviewed and accepted by the Data Package Working Group.

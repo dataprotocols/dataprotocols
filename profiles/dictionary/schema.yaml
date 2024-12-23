@@ -123,16 +123,14 @@ tableSchemaField:
     - "$ref": "#/definitions/tableSchemaFieldDuration"
     - "$ref": "#/definitions/tableSchemaFieldAny"
 tableSchemaFieldsMatch:
-  type: array
-  item:
-    type: string
-    enum:
-      - exact
-      - equal
-      - subset
-      - superset
-      - partial
-    default: exact
+  type: string
+  enum:
+    - exact
+    - equal
+    - subset
+    - superset
+    - partial
+  default: exact
 tableSchemaPrimaryKey:
   oneOf:
     - type: array

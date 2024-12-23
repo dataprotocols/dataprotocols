@@ -3,7 +3,7 @@ title: Data Package
 description: A simple container format for describing a coherent collection of data in a single package. It provides the basis for convenient delivery, installation and management of datasets.
 sidebar:
   order: 1
-profile: /profiles/2.0/datapackage.json
+profile: /profiles/2.1/datapackage.json
 authors:
   - Rufus Pollock
   - Paul Walsh
@@ -129,7 +129,7 @@ Packaged data resources are described in the `resources` property of the package
 
 A root level Data Package descriptor `MAY` have a `$schema` property that `MUST` be a profile as per [Profile](/standard/glossary/#profile) definition that `MUST` include all the metadata constraints required by this specification.
 
-The default value is `https://datapackage.org/profiles/1.0/datapackage.json` and the recommended value is `https://datapackage.org/profiles/2.0/datapackage.json`.
+The default value is `https://datapackage.org/profiles/1.0/datapackage.json` and the recommended value is `https://datapackage.org/profiles/2.1/datapackage.json`.
 
 :::note[Backward Compatibility]
 If the `$schema` property is not provided but a descriptor has the `profile` property a data consumer `MUST` validate the descriptor according to the [Profiles](https://specs.frictionlessdata.io/profiles/) specification.

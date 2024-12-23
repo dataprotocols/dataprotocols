@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Table Dialect",
+  "description": "The Table dialect descriptor.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "default": "https://datapackage.org/profiles/1.0/tabledialect.json",
+      "propertyOrder": 10,
+      "title": "Profile",
+      "description": "The profile of this descriptor.",
+      "type": "string"
+    },
+    "header": {
+      "title": "Header",
+      "description": "Specifies if the file includes a header row, always as the first row in the file.",
+      "type": "boolean",
+      "default": true,
+      "examples": [
+        "{\n  \"header\": true\n}\n"
+      ]
+    },
+    "headerRows": {
+      "type": "array",
+      "default": [
+        1
+      ],
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "headerJoin": {
+      "type": "string",
+      "default": " "
+    },
+    "commentRows": {
+      "type": "array",
+      "default": [
+        1
+      ],
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "commentChar": {
+      "title": "Comment Character",
+      "description": "Specifies that any row beginning with this one-character string, without preceeding whitespace, causes the entire line to be ignored.",
+      "type": "string",
+      "examples": [
+        "{\n  \"commentChar\": \"#\"\n}\n"
+      ]
+    },
+    "delimiter": {
+      "title": "Delimiter",
+      "description": "A character sequence to use as the field separator.",
+      "type": "string",
+      "default": ",",
+      "examples": [
+        "{\n  \"delimiter\": \",\"\n}\n",
+        "{\n  \"delimiter\": \";\"\n}\n"
+      ]
+    },
+    "lineTerminator": {
+      "title": "Line Terminator",
+      "description": "Specifies the character sequence that must be used to terminate rows.",
+      "type": "string",
+      "default": "\r\n",
+      "examples": [
+        "{\n  \"lineTerminator\": \"\\r\\n\"\n}\n",
+        "{\n  \"lineTerminator\": \"\\n\"\n}\n"
+      ]
+    },
+    "quoteChar": {
+      "title": "Quote Character",
+      "description": "Specifies a one-character string to use as the quoting character.",
+      "type": "string",
+      "default": "\"",
+      "examples": [
+        "{\n  \"quoteChar\": \"'\"\n}\n"
+      ]
+    },
+    "doubleQuote": {
+      "title": "Double Quote",
+      "description": "Specifies the handling of quotes inside fields.",
+      "context": "If Double Quote is set to true, two consecutive quotes must be interpreted as one.",
+      "type": "boolean",
+      "default": true,
+      "examples": [
+        "{\n  \"doubleQuote\": true\n}\n"
+      ]
+    },
+    "escapeChar": {
+      "title": "Escape Character",
+      "description": "Specifies a one-character string to use as the escape character.",
+      "type": "string",
+      "examples": [
+        "{\n  \"escapeChar\": \"\\\\\"\n}\n"
+      ]
+    },
+    "nullSequence": {
+      "title": "Null Sequence",
+      "description": "Specifies the null sequence, for example, `\\N`.",
+      "type": "string",
+      "examples": [
+        "{\n  \"nullSequence\": \"\\N\"\n}\n"
+      ]
+    },
+    "skipInitialSpace": {
+      "title": "Skip Initial Space",
+      "description": "Specifies the interpretation of whitespace immediately following a delimiter. If false, whitespace immediately after a delimiter should be treated as part of the subsequent field.",
+      "type": "boolean",
+      "default": false,
+      "examples": [
+        "{\n  \"skipInitialSpace\": true\n}\n"
+      ]
+    },
+    "property": {
+      "type": "string"
+    },
+    "itemType": {
+      "type": "string",
+      "enum": [
+        "array",
+        "object"
+      ]
+    },
+    "itemKeys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sheetNumber": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sheetName": {
+      "type": "string"
+    },
+    "table": {
+      "type": "string"
+    }
+  }
+}
