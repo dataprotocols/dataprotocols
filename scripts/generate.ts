@@ -1,4 +1,4 @@
-import { version } from "./package.json"
+import { version } from "../package.json"
 import JsonSchema from "@apidevtools/json-schema-ref-parser"
 import fs from "fs-extra"
 import { glob } from "glob"

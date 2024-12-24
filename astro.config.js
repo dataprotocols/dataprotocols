@@ -134,4 +134,9 @@ export default defineConfig({
       ],
     ],
   },
+  vite: {
+    resolve: {
+      preserveSymlinks: true,
+    },
+  },
 })
