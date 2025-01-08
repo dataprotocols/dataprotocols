@@ -12,6 +12,42 @@ This document includes all meaningful changes made to the **Data Package standar
 
 [fieldsMatch](/standard/table-schema/#fieldsMatch) has been corrected from array to string to match its definition ([#965](https://github.com/frictionlessdata/datapackage/issues/965)).
 
+##### `schema.name` (new)
+
+[`name`](/standard/table-schema/#name) allows to specify a name for a schema ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
+##### `schema.title` (new)
+
+[`title`](/standard/table-schema/#title) allows to specify a title for a schema ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
+##### `schema.description` (new)
+
+[`description`](/standard/table-schema/#description) allows to specify a description for a schema ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
+##### `schema.homepage` (new)
+
+[`homepage`](/standard/table-schema/#homepage) allows to specify a homepage for a schema ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
+##### `schema.version` (new)
+
+[`version`](/standard/table-schema/#version) allows to specify a version for a schema ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
+##### `schema.created` (new)
+
+[`created`](/standard/table-schema/#created) allows to specify when a schema was created ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
+##### `schema.keywords` (new)
+
+[`keywords`](/standard/table-schema/#keywords) allows to specify keywords for a schema ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
+##### `schema.contributors` (new)
+
+[`contributors`](/standard/table-schema/#contributors) allows to specify contributors for a schema ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
+##### `schema.examples` (new)
+
+[`examples`](/standard/table-schema/#examples) allows to specify a list of illustrative data resources that use a schema ([#961](https://github.com/frictionlessdata/datapackage/pull/961)).
+
 ## v2.0
 
 This release includes a rich set of specification improvements to make Data Package a finished product (see [announcement](https://frictionlessdata.io/blog/2023/11/15/frictionless-specs-update/)). All changes were reviewed and accepted by the Data Package Working Group.

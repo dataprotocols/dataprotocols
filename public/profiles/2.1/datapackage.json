@@ -57,7 +57,7 @@
     "homepage": {
       "propertyOrder": 60,
       "title": "Home Page",
-      "description": "The home on the web that is related to this data package.",
+      "description": "The home on the web that is related to this descriptor.",
       "type": "string",
       "format": "uri",
       "examples": [
@@ -153,7 +153,7 @@
     "keywords": {
       "propertyOrder": 90,
       "title": "Keywords",
-      "description": "A list of keywords that describe this package.",
+      "description": "A list of keywords that describe this descriptor.",
       "type": "array",
       "minItems": 1,
       "items": {
@@ -348,7 +348,7 @@
           "homepage": {
             "propertyOrder": 70,
             "title": "Home Page",
-            "description": "The home on the web that is related to this data package.",
+            "description": "The home on the web that is related to this descriptor.",
             "type": "string",
             "format": "uri",
             "examples": [
@@ -3089,6 +3089,175 @@
                 "examples": [
                   "{\n  \"missingValues\": [\n    \"-\",\n    \"NaN\",\n    \"\"\n  ]\n}\n",
                   "{\n  \"missingValues\": []\n}\n"
+                ]
+              },
+              "name": {
+                "title": "Name",
+                "description": "An identifier string.",
+                "type": "string",
+                "context": "This is ideally a url-usable and human-readable name. Name `SHOULD` be invariant, meaning it `SHOULD NOT` change when its parent descriptor is updated.",
+                "examples": [
+                  "{\n  \"name\": \"my-nice-name\"\n}\n"
+                ]
+              },
+              "title": {
+                "title": "Title",
+                "description": "A human-readable title.",
+                "type": "string",
+                "examples": [
+                  "{\n  \"title\": \"My Package Title\"\n}\n"
+                ]
+              },
+              "description": {
+                "title": "Description",
+                "description": "A text description. Markdown is encouraged.",
+                "type": "string",
+                "examples": [
+                  "{\n  \"description\": \"# My Package description\\nAll about my package.\"\n}\n"
+                ]
+              },
+              "homepage": {
+                "title": "Home Page",
+                "description": "The home on the web that is related to this descriptor.",
+                "type": "string",
+                "format": "uri",
+                "examples": [
+                  "{\n  \"homepage\": \"http://example.com/\"\n}\n"
+                ]
+              },
+              "created": {
+                "title": "Created",
+                "description": "The datetime on which this descriptor was created.",
+                "context": "The datetime must conform to the string formats for datetime as described in [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.6)",
+                "type": "string",
+                "format": "date-time",
+                "examples": [
+                  "{\n  \"created\": \"1985-04-12T23:20:50.52Z\"\n}\n"
+                ]
+              },
+              "version": {
+                "title": "Version",
+                "description": "A unique version number for this descriptor.",
+                "type": "string",
+                "examples": [
+                  "{\n  \"version\": \"0.0.1\"\n}\n",
+                  "{\n  \"version\": \"1.0.1-beta\"\n}\n"
+                ]
+              },
+              "keywords": {
+                "title": "Keywords",
+                "description": "A list of keywords that describe this descriptor.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                },
+                "examples": [
+                  "{\n  \"keywords\": [\n    \"data\",\n    \"fiscal\",\n    \"transparency\"\n  ]\n}\n"
+                ]
+              },
+              "contributors": {
+                "title": "Contributors",
+                "description": "The contributors to this descriptor.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "title": "Contributor",
+                  "description": "A contributor to this descriptor.",
+                  "properties": {
+                    "title": {
+                      "title": "Title",
+                      "description": "A human-readable title.",
+                      "type": "string",
+                      "examples": [
+                        "{\n  \"title\": \"My Package Title\"\n}\n"
+                      ]
+                    },
+                    "path": {
+                      "title": "Path",
+                      "description": "A fully qualified URL, or a POSIX file path.",
+                      "type": "string",
+                      "pattern": "^((?=[^./~])(?!file:)((?!\\/\\.\\.\\/)(?!\\\\)(?!:\\/\\/).)*|(http|ftp)s?:\\/\\/.*)$",
+                      "examples": [
+                        "{\n  \"path\": \"file.csv\"\n}\n",
+                        "{\n  \"path\": \"http://example.com/file.csv\"\n}\n"
+                      ],
+                      "context": "Implementations need to negotiate the type of path provided, and dereference the data accordingly."
+                    },
+                    "email": {
+                      "title": "Email",
+                      "description": "An email address.",
+                      "type": "string",
+                      "format": "email",
+                      "examples": [
+                        "{\n  \"email\": \"example@example.com\"\n}\n"
+                      ]
+                    },
+                    "givenName": {
+                      "type": "string"
+                    },
+                    "familyName": {
+                      "type": "string"
+                    },
+                    "organization": {
+                      "title": "Organization",
+                      "description": "An organizational affiliation for this contributor.",
+                      "type": "string"
+                    },
+                    "roles": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "minProperties": 1,
+                  "context": "Use of this property does not imply that the person was the original creator of, or a contributor to, the data in the descriptor, but refers to the composition of the descriptor itself."
+                },
+                "examples": [
+                  "{\n  \"contributors\": [\n    {\n      \"title\": \"Joe Bloggs\"\n    }\n  ]\n}\n",
+                  "{\n  \"contributors\": [\n    {\n      \"title\": \"Joe Bloggs\",\n      \"email\": \"joe@example.com\",\n      \"role\": \"author\"\n    }\n  ]\n}\n"
+                ]
+              },
+              "examples": {
+                "title": "Examples",
+                "description": "A list of Data Resources that use and illustrate the schema.",
+                "type": "array",
+                "minItems": 0,
+                "items": {
+                  "title": "Example",
+                  "description": "A Data Resource that uses and illustrates the schema.",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "title": "Name",
+                      "description": "An identifier string.",
+                      "type": "string",
+                      "context": "This is ideally a url-usable and human-readable name. Name `SHOULD` be invariant, meaning it `SHOULD NOT` change when its parent descriptor is updated.",
+                      "examples": [
+                        "{\n  \"name\": \"my-nice-name\"\n}\n"
+                      ]
+                    },
+                    "path": {
+                      "title": "Path",
+                      "description": "A fully qualified URL, or a POSIX file path.",
+                      "type": "string",
+                      "pattern": "^((?=[^./~])(?!file:)((?!\\/\\.\\.\\/)(?!\\\\)(?!:\\/\\/).)*|(http|ftp)s?:\\/\\/.*)$",
+                      "examples": [
+                        "{\n  \"path\": \"file.csv\"\n}\n",
+                        "{\n  \"path\": \"http://example.com/file.csv\"\n}\n"
+                      ],
+                      "context": "Implementations need to negotiate the type of path provided, and dereference the data accordingly."
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "path"
+                  ]
+                },
+                "examples": [
+                  "{\n  \"examples\": [\n    {\n      \"name\": \"valid-data\",\n      \"path\": \"http://example.com/valid-data.csv\"\n    }\n  ]\n}\n"
                 ]
               }
             },

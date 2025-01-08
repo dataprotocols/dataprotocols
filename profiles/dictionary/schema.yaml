@@ -81,6 +81,24 @@ tableSchema:
           }
     missingValues:
       "$ref": "#/definitions/tableSchemaMissingValues"
+    name:
+      "$ref": "#/definitions/name"
+    title:
+      "$ref": "#/definitions/title"
+    description:
+      "$ref": "#/definitions/description"
+    homepage:
+      "$ref": "#/definitions/homepage"
+    created:
+      "$ref": "#/definitions/created"
+    version:
+      "$ref": "#/definitions/version"
+    keywords:
+      "$ref": "#/definitions/keywords"
+    contributors:
+      "$ref": "#/definitions/contributors"
+    examples:
+      "$ref": "#/definitions/tableSchemaExamples"
   examples:
     - |
       {
@@ -261,6 +279,33 @@ tableSchemaMissingValues:
       {
         "missingValues": []
       }
+tableSchemaExamples:
+  title: Examples
+  description: A list of Data Resources that use and illustrate the schema.
+  type: array
+  minItems: 0
+  items:
+    "$ref": "#/definitions/tableSchemaExample"
+  examples:
+    - |
+      {
+        "examples": [
+          {
+            "name": "valid-data",
+            "path": "http://example.com/valid-data.csv"
+          }
+        ]
+      }
+tableSchemaExample:
+  title: Example
+  description: A Data Resource that uses and illustrates the schema.
+  type: object
+  properties:
+    name:
+      "$ref": "#/definitions/name"
+    path:
+      "$ref": "#/definitions/path"
+  required: ["name", "path"]
 tableSchemaFieldString:
   type: object
   title: String Field

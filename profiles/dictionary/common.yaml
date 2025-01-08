@@ -72,7 +72,7 @@ example:
       }
 homepage:
   title: Home Page
-  description: The home on the web that is related to this data package.
+  description: The home on the web that is related to this descriptor.
   type: string
   format: uri
   examples:
@@ -149,7 +149,7 @@ created:
       }
 keywords:
   title: Keywords
-  description: A list of keywords that describe this package.
+  description: A list of keywords that describe this descriptor.
   type: array
   minItems: 1
   items:
