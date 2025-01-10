@@ -16,13 +16,13 @@ name:
 id:
   title: ID
   description: A property reserved for globally unique identifiers. Examples of
-    identifiers that are unique include UUIDs and DOIs.
+    identifiers that are unique include UUIDs and DOI links.
   context: A common usage pattern for Data Packages is as a packaging format within
     the bounds of a system or platform. In these cases, a unique identifier for
     a package is desired for common data handling workflows, such as updating an
     existing package. While at the level of the specification, global uniqueness
     cannot be validated, consumers using the `id` property `MUST` ensure identifiers
-    are globally unique.
+    are globally unique. When using a DOI, specify the full DOI link.
   type: string
   examples:
     - |
